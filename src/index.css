@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="emerald"] {
+  --accent-primary: #10b981;
+  --accent-primary-hover: #34d399;
+  --accent-text: #a7f3d0;
+  --accent-glow: rgba(16, 185, 129, 0.4);
+  --accent-glow-strong: rgba(16, 185, 129, 0.6);
+  --accent-border: rgba(16, 185, 129, 0.25);
+  --accent-border-hover: rgba(16, 185, 129, 0.6);
+  --accent-bg-card: #05140b;
+  --accent-bg-card-hover: #072011;
+  --accent-bg-soft: rgba(6, 30, 16, 0.75);
+  --accent-bg-bar: #06150b;
+  --body-bg: #040805;
+}
+
+[data-theme="matrix"] {
+  --accent-primary: #22c55e;
+  --accent-primary-hover: #4ade80;
+  --accent-text: #86efac;
+  --accent-glow: rgba(34, 197, 94, 0.55);
+  --accent-glow-strong: rgba(34, 197, 94, 0.75);
+  --accent-border: rgba(34, 197, 94, 0.35);
+  --accent-border-hover: rgba(34, 197, 94, 0.75);
+  --accent-bg-card: #031405;
+  --accent-bg-card-hover: #06240a;
+  --accent-bg-soft: rgba(5, 36, 10, 0.75);
+  --accent-bg-bar: #031a07;
+  --body-bg: #010802;
+}
+
+[data-theme="ocean"] {
+  --accent-primary: #06b6d4;
+  --accent-primary-hover: #22d3ee;
+  --accent-text: #a5f3fc;
+  --accent-glow: rgba(6, 182, 212, 0.45);
+  --accent-glow-strong: rgba(6, 182, 212, 0.7);
+  --accent-border: rgba(6, 182, 212, 0.28);
+  --accent-border-hover: rgba(6, 182, 212, 0.65);
+  --accent-bg-card: #04141c;
+  --accent-bg-card-hover: #061e2b;
+  --accent-bg-soft: rgba(6, 30, 42, 0.75);
+  --accent-bg-bar: #041a24;
+  --body-bg: #02080d;
+}
+
+[data-theme="amethyst"] {
+  --accent-primary: #a855f7;
+  --accent-primary-hover: #c084fc;
+  --accent-text: #f3e8ff;
+  --accent-glow: rgba(168, 85, 247, 0.45);
+  --accent-glow-strong: rgba(168, 85, 247, 0.7);
+  --accent-border: rgba(168, 85, 247, 0.3);
+  --accent-border-hover: rgba(168, 85, 247, 0.65);
+  --accent-bg-card: #12051c;
+  --accent-bg-card-hover: #1c082c;
+  --accent-bg-soft: rgba(28, 8, 44, 0.75);
+  --accent-bg-bar: #180726;
+  --body-bg: #07020d;
+}
+
+[data-theme="crimson"] {
+  --accent-primary: #ef4444;
+  --accent-primary-hover: #f87171;
+  --accent-text: #fee2e2;
+  --accent-glow: rgba(239, 68, 68, 0.45);
+  --accent-glow-strong: rgba(239, 68, 68, 0.7);
+  --accent-border: rgba(239, 68, 68, 0.3);
+  --accent-border-hover: rgba(239, 68, 68, 0.65);
+  --accent-bg-card: #180505;
+  --accent-bg-card-hover: #260808;
+  --accent-bg-soft: rgba(38, 8, 8, 0.75);
+  --accent-bg-bar: #220707;
+  --body-bg: #0a0202;
+}
+
+[data-theme="midnight"] {
+  --accent-primary: #cbd5e1;
+  --accent-primary-hover: #f1f5f9;
+  --accent-text: #f8fafc;
+  --accent-glow: rgba(203, 213, 225, 0.35);
+  --accent-glow-strong: rgba(203, 213, 225, 0.6);
+  --accent-border: rgba(148, 163, 184, 0.25);
+  --accent-border-hover: rgba(148, 163, 184, 0.6);
+  --accent-bg-card: #0f172a;
+  --accent-bg-card-hover: #1e293b;
+  --accent-bg-soft: rgba(30, 41, 59, 0.75);
+  --accent-bg-bar: #141e33;
+  --body-bg: #020617;
+}
+
+@layer base {
+  * {
+    border-color: var(--accent-border);
+  }
+
+  body {
+    background-color: var(--body-bg);
+    color: var(--accent-text);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom themed glowing scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--body-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Dynamic theme glow classes */
+.glow-emerald {
+  box-shadow: 0 0 25px -5px var(--accent-glow);
+}
+
+.glow-emerald-strong {
+  box-shadow: 0 0 35px 2px var(--accent-glow-strong);
+}
+
+.text-glow-emerald {
+  text-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Utility Theme-Mapped Classes */
+.theme-primary-bg {
+  background-color: var(--accent-primary);
+}
+
+.theme-primary-text {
+  color: var(--accent-primary);
+}
+
+.theme-sub-text {
+  color: var(--accent-text);
+}
+
+.theme-card-bg {
+  background-color: var(--accent-bg-card);
+}
+
+.theme-card-bg:hover {
+  background-color: var(--accent-bg-card-hover);
+}
+
+.theme-soft-bg {
+  background-color: var(--accent-bg-soft);
+}
+
+.theme-bar-bg {
+  background-color: var(--accent-bg-bar);
+}
+
+.theme-border {
+  border-color: var(--accent-border);
+}
+
+.theme-border-hover:hover {
+  border-color: var(--accent-border-hover);
+}
